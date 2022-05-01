@@ -42,11 +42,19 @@ export function Home() {
   }
 
   function handleFilterLoginData() {
-    // Filter results inside data, save with setSearchListData
+    const filteredData = searchListData.filter(data => {
+      if(data.service_name.includes(searchText)) {
+        return data;
+      }
+    });
+
+    setSearchListData(filteredData);
   }
 
   function handleChangeInputText(text: string) {
-    // Update searchText value
+    if(!text) setSearchListData(data)
+
+    setSearchText(text);
   }
 
   useFocusEffect(useCallback(() => {
