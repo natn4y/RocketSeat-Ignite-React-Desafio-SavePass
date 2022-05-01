@@ -59,6 +59,8 @@ export function RegisterLoginData() {
 
     await AsyncStorage.setItem(dataKey, JSON.stringify(newLoginListData));
     console.log(newLoginListData);
+
+    navigate('Home');
   }
 
   return (
